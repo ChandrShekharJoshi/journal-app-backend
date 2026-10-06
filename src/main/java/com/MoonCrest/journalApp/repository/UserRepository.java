@@ -1,7 +1,6 @@
 package com.MoonCrest.journalApp.repository;
 
 
-import com.MoonCrest.journalApp.Entity.JournalEntry;
 import com.MoonCrest.journalApp.Entity.User;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;

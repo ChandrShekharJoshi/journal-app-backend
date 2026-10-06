@@ -1,6 +1,5 @@
 package com.MoonCrest.journalApp.Entity;
 
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -12,15 +11,14 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Document(collection = "users")
 @Data
-@NoArgsConstructor // This brings back "new User()"
+@NoArgsConstructor
 @RequiredArgsConstructor
-
 public class User {
+
     @Id
     private ObjectId id;
 
@@ -31,9 +29,8 @@ public class User {
     @NonNull
     private String password;
 
+    private Role role = Role.USER;
+
     @DBRef
-    private List<JournalEntry>journalEntries = new ArrayList<>();
-
-
-
+    private List<JournalEntry> journalEntries = new ArrayList<>();
 }
